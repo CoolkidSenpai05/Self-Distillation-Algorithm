@@ -26,7 +26,7 @@ accelerate launch \
     --lora_target_modules q_proj k_proj v_proj o_proj gate_proj up_proj down_proj \
     --save_steps 25 \
     --logging_steps 2 \
-    --attn_implementation flash_attention_2 \
+    --attn_implementation sdpa \
     --torch_dtype bfloat16 \
     --beta 0.0 \
     --loss_type grpo \
