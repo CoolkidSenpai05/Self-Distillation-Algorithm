@@ -88,14 +88,23 @@ class RLSDTrainer(GRPOTrainer):
             raise KeyError("RLSDTrainer expects each dataset row to contain a 'teacher_prompt' column.")
 
         mode = "train" if self.model.training else "eval"
-        num_generations = self.num_generations if mode == "train" else self.num_generations_eval
         teacher_prompts = [example["teacher_prompt"] for example in inputs]
-        teacher_prompts = [prompt for prompt in teacher_prompts for _ in range(num_generations)]
 
         completion_ids = output["completion_ids"]
         completion_mask = output["completion_mask"]
         batch_size = self.args.per_device_train_batch_size if mode == "train" else self.args.per_device_eval_batch_size
         logits_to_keep = completion_ids.size(1)
+
+        if len(teacher_prompts) == completion_ids.size(0):
+            pass
+        elif completion_ids.size(0) % len(teacher_prompts) == 0:
+            repeats = completion_ids.size(0) // len(teacher_prompts)
+            teacher_prompts = [prompt for prompt in teacher_prompts for _ in range(repeats)]
+        else:
+            raise RuntimeError(
+                "Cannot align teacher prompts with completions: "
+                f"{len(teacher_prompts)} prompts for {completion_ids.size(0)} completions."
+            )
 
         with torch.no_grad():
             student_logps = self._get_student_logps(output, batch_size=batch_size)
