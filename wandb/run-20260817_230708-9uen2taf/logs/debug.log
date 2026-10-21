@@ -1,0 +1,23 @@
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_setup.py:_flush():81] Configure stats pid to 2697895
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_setup.py:_flush():81] Loading settings from /home/nlpstudent/.config/wandb/settings
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_setup.py:_flush():81] Loading settings from /workspace/nlpstudent/nvq/Self-Distillation-Algorithm/wandb/settings
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_init.py:setup_run_log_directory():706] Logging user logs to /workspace/nlpstudent/nvq/Self-Distillation-Algorithm/wandb/run-20260817_230708-9uen2taf/logs/debug.log
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to /workspace/nlpstudent/nvq/Self-Distillation-Algorithm/wandb/run-20260817_230708-9uen2taf/logs/debug-internal.log
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_init.py:init():833] calling init triggers
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'model_name': 'Qwen/Qwen3-0.6B', 'learning_rate': 5e-06, 'effective_batch_size': 8, 'num_train_epochs': 2.0, 'num_generations': 4, 'max_prompt_length': 2048, 'max_completion_length': 512, 'temperature': 1.1, 'beta': 0.0, 'rlsd_lambda': 0.5, 'rlsd_lambda_decay_steps': 50, 'rlsd_epsilon_w': 0.2, 'use_peft': True, 'lora_r': 64, 'lora_alpha': 128, 'num_processes': 1, '_wandb': {}}
+2026-08-17 23:07:08,265 INFO    MainThread:2697895 [wandb_init.py:init():881] starting backend
+2026-08-17 23:07:08,902 INFO    MainThread:2697895 [wandb_init.py:init():884] sending inform_init request
+2026-08-17 23:07:08,918 INFO    MainThread:2697895 [wandb_init.py:init():892] backend started and connected
+2026-08-17 23:07:08,920 INFO    MainThread:2697895 [wandb_init.py:init():962] updated telemetry
+2026-08-17 23:07:09,052 INFO    MainThread:2697895 [wandb_init.py:init():986] communicating run to backend with 90.0 second timeout
+2026-08-17 23:07:10,137 INFO    MainThread:2697895 [wandb_init.py:init():1033] starting run threads in backend
+2026-08-17 23:07:10,753 INFO    MainThread:2697895 [wandb_run.py:_console_start():2506] atexit reg
+2026-08-17 23:07:10,753 INFO    MainThread:2697895 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2026-08-17 23:07:10,753 INFO    MainThread:2697895 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2026-08-17 23:07:10,754 INFO    MainThread:2697895 [wandb_run.py:_redirect():2446] Redirects installed.
+2026-08-17 23:07:10,783 INFO    MainThread:2697895 [wandb_init.py:init():1073] run started, returning control to user process
+2026-08-17 23:08:54,397 INFO    wandb-AsyncioManager-main:2697895 [service_client.py:_forward_responses():80] Reached EOF.
+2026-08-17 23:08:54,397 INFO    wandb-AsyncioManager-main:2697895 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

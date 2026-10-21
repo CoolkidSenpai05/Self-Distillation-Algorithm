@@ -1,0 +1,168 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            obpttlbdns5aa06hteawad14y3rxv3fz:
+                args:
+                    - --model_name_or_path
+                    - Qwen/Qwen3-0.6B
+                    - --learning_rate
+                    - "5e-6"
+                    - --max_grad_norm
+                    - "0.1"
+                    - --per_device_train_batch_size
+                    - "1"
+                    - --gradient_checkpointing
+                    - --gradient_accumulation_steps
+                    - "8"
+                    - --output_dir
+                    - ./outputs/rlsd/
+                    - --run_config
+                    - qwen306b_3090_gen512_lambda05_eps02
+                    - --num_train_epochs
+                    - "2"
+                    - --num_iterations
+                    - "2"
+                    - --max_prompt_length
+                    - "2048"
+                    - --max_completion_length
+                    - "512"
+                    - --num_generations
+                    - "4"
+                    - --temperature
+                    - "1.1"
+                    - --top_p
+                    - "0.95"
+                    - --top_k
+                    - "20"
+                    - --use_peft
+                    - --lora_r
+                    - "64"
+                    - --lora_alpha
+                    - "128"
+                    - --lora_target_modules
+                    - q_proj
+                    - k_proj
+                    - v_proj
+                    - o_proj
+                    - gate_proj
+                    - up_proj
+                    - down_proj
+                    - --save_steps
+                    - "25"
+                    - --logging_steps
+                    - "2"
+                    - --attn_implementation
+                    - flash_attention_2
+                    - --torch_dtype
+                    - bfloat16
+                    - --beta
+                    - "0.0"
+                    - --loss_type
+                    - grpo
+                    - --scale_rewards
+                    - group
+                    - --rlsd_lambda
+                    - "0.5"
+                    - --rlsd_lambda_decay_steps
+                    - "50"
+                    - --rlsd_epsilon_w
+                    - "0.2"
+                    - --teacher_max_prompt_length
+                    - "3072"
+                    - --wandb_project
+                    - RLSD
+                codePath: rlsd_train.py
+                codePathLocal: rlsd_train.py
+                cpu_count: 10
+                cpu_count_logical: 20
+                cudaVersion: "12.9"
+                disk:
+                    /:
+                        total: "470887243776"
+                        used: "440491175936"
+                email: phamcongminh1104@gmail.com
+                executable: /workspace/nlpstudent/conda_envs/opsd/bin/python
+                git:
+                    commit: bd4412447aa13549b45f0012a1fb810285a9590c
+                    remote: https://github.com/CoolkidSenpai05/Self-Distillation-Algorithm.git
+                gpu: NVIDIA GeForce RTX 3090
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10496
+                      memoryTotal: "25769803776"
+                      name: NVIDIA GeForce RTX 3090
+                      uuid: GPU-5e1bf88a-a431-9a0c-b462-37cd95b5e9b8
+                host: worker01
+                memory:
+                    total: "67068334080"
+                os: Linux-5.15.0-139-generic-x86_64-with-glibc2.31
+                program: /workspace/nlpstudent/nvq/Self-Distillation-Algorithm/rlsd_train.py
+                python: CPython 3.10.20
+                root: /workspace/nlpstudent/nvq/Self-Distillation-Algorithm
+                startedAt: "2026-08-17T16:07:08.262644Z"
+                writerId: obpttlbdns5aa06hteawad14y3rxv3fz
+        m: []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 51
+                - 71
+                - 84
+                - 95
+                - 98
+            "2":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 51
+                - 71
+                - 84
+                - 95
+                - 98
+            "3":
+                - 13
+                - 16
+            "4": 3.10.20
+            "5": 0.22.3
+            "6": 4.57.1
+            "12": 0.22.3
+            "13": linux-x86_64
+beta:
+    value: 0
+effective_batch_size:
+    value: 8
+learning_rate:
+    value: 5e-06
+lora_alpha:
+    value: 128
+lora_r:
+    value: 64
+max_completion_length:
+    value: 512
+max_prompt_length:
+    value: 2048
+model_name:
+    value: Qwen/Qwen3-0.6B
+num_generations:
+    value: 4
+num_processes:
+    value: 1
+num_train_epochs:
+    value: 2
+rlsd_epsilon_w:
+    value: 0.2
+rlsd_lambda:
+    value: 0.5
+rlsd_lambda_decay_steps:
+    value: 50
+temperature:
+    value: 1.1
+use_peft:
+    value: true

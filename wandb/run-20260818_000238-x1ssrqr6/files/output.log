@@ -1,0 +1,49 @@
+[34m[1mwandb[0m: Detected [openai] in use.
+[34m[1mwandb[0m: Use W&B Weave for improved LLM call tracing. Install Weave with `pip install weave` then add `import weave` to the top of your script.
+[34m[1mwandb[0m: For more information, check out the docs at: https://weave-docs.wandb.ai/
+`torch_dtype` is deprecated! Use `dtype` instead!
+generation_config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████| 239/239 [00:00<00:00, 882kB/s]
+The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'bos_token_id': None, 'pad_token_id': 151643}.
+[rank0]:W0818 00:02:55.963000 2793572 site-packages/torch/utils/cpp_extension.py:2425] TORCH_CUDA_ARCH_LIST is not set, all archs for visible cards are included for compilation.
+[rank0]:W0818 00:02:55.963000 2793572 site-packages/torch/utils/cpp_extension.py:2425] If this is not desired, please set os.environ['TORCH_CUDA_ARCH_LIST'] to specific architectures.
+  0%|                                                                                                                         | 0/58868 [00:00<?, ?it/s]`generation_config` default values have been modified to match model-specific defaults: {'use_cache': False}. If this is not desired, please set these values explicitly.
+Traceback (most recent call last):
+  File "/workspace/nlpstudent/nvq/Self-Distillation-Algorithm/rlsd_train.py", line 270, in <module>
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+  File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+  File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/trl/trainer/grpo_trainer.py", line 1124, in training_step
+    output = super().training_step(model, inputs, num_items_in_batch)
+  File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/transformers/trainer.py", line 4014, in training_step
+    inputs = self._prepare_inputs(inputs)
+  File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/trl/extras/profiling.py", line 98, in wrapper
+    return func(self, *args, **kwargs)
+  File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/trl/trainer/grpo_trainer.py", line 1153, in _prepare_inputs
+    generation_batch = self._generate_and_score_completions(generation_batch)
+  File "/workspace/nlpstudent/nvq/Self-Distillation-Algorithm/rlsd_trainer.py", line 102, in _generate_and_score_completions
+    teacher_input_ids, teacher_attention_mask = self._tokenize_teacher_prompts(teacher_prompts, completion_ids)
+  File "/workspace/nlpstudent/nvq/Self-Distillation-Algorithm/rlsd_trainer.py", line 56, in _tokenize_teacher_prompts
+    teacher_input_ids = torch.cat([teacher_prompt_ids, completion_ids], dim=1)
+RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 8 for tensor number 1 in the list.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/nlpstudent/nvq/Self-Distillation-Algorithm/rlsd_train.py", line 270, in <module>
+[rank0]:     trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+[rank0]:   File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/transformers/trainer.py", line 2325, in train
+[rank0]:     return inner_training_loop(
+[rank0]:   File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+[rank0]:     tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+[rank0]:   File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/trl/trainer/grpo_trainer.py", line 1124, in training_step
+[rank0]:     output = super().training_step(model, inputs, num_items_in_batch)
+[rank0]:   File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/transformers/trainer.py", line 4014, in training_step
+[rank0]:     inputs = self._prepare_inputs(inputs)
+[rank0]:   File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/trl/extras/profiling.py", line 98, in wrapper
+[rank0]:     return func(self, *args, **kwargs)
+[rank0]:   File "/workspace/nlpstudent/conda_envs/opsd/lib/python3.10/site-packages/trl/trainer/grpo_trainer.py", line 1153, in _prepare_inputs
+[rank0]:     generation_batch = self._generate_and_score_completions(generation_batch)
+[rank0]:   File "/workspace/nlpstudent/nvq/Self-Distillation-Algorithm/rlsd_trainer.py", line 102, in _generate_and_score_completions
+[rank0]:     teacher_input_ids, teacher_attention_mask = self._tokenize_teacher_prompts(teacher_prompts, completion_ids)
+[rank0]:   File "/workspace/nlpstudent/nvq/Self-Distillation-Algorithm/rlsd_trainer.py", line 56, in _tokenize_teacher_prompts
+[rank0]:     teacher_input_ids = torch.cat([teacher_prompt_ids, completion_ids], dim=1)
+[rank0]: RuntimeError: Sizes of tensors must match except in dimension 1. Expected size 32 but got size 8 for tensor number 1 in the list.
